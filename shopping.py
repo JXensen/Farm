@@ -1,1 +1,0 @@
-# shopping and selling system
