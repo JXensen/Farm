@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://systems/save_and_load/character_data.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Player"
+run_speed = 100.0
+farming_experience = 0
+mining_experience = 0
+insect_experience = 0
+total_experience = 0
+level = 0
+strength = 5
+endurance = 5
+charisma = 5
