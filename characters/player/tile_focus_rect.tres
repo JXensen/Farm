@@ -1,0 +1,5 @@
+[gd_resource type="RectangleShape2D" format=2]
+
+[resource]
+resource_name = "tile_focus_rect"
+extents = Vector2( 1, 1 )
