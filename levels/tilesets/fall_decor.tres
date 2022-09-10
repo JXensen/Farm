@@ -1,7 +1,6 @@
-[gd_resource type="TileSet" load_steps=14 format=2]
+[gd_resource type="TileSet" load_steps=16 format=2]
 
-[ext_resource path="res://tools/spring_tileset.gd" type="Script" id=1]
-[ext_resource path="res://assets/tiles/tiles.png" type="Texture" id=2]
+[ext_resource path="res://assets/tiles/tiles.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 12, 24, 20, 24, 20, 32, 12, 32 )
@@ -19,30 +18,38 @@ points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
 points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 0, 16, 4, 12, 4, 8, 12, 8, 12, 12, 16, 16 )
+points = PoolVector2Array( 0, -16, 0, -16, 0, -16, 0, -16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 16, 16, 0, 16, 8, 8 )
+points = PoolVector2Array( 0, 16, 8, 8, 16, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 4, 16, 4, 12, 8, 8, 12, 12, 12, 16 )
+points = PoolVector2Array( 0, 16, 4, 8, 12, 8, 16, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
+points = PoolVector2Array( 4, 16, 4, 12, 8, 8, 12, 12, 12, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
-points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
+points = PoolVector2Array( 0, 0, 0, 0, 0, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
-points = PoolVector2Array( 8, 20, 16, 24, 8, 28, 0, 24 )
+points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 24, 8, 20, 16, 24, 8, 28 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 24, 8, 20, 16, 24, 8, 28 )
 
 [resource]
-resource_name = "spring_2nd_layer_tiles"
-0/name = "spring_grass_details0"
-0/texture = ExtResource( 2 )
+0/name = "fall_grass_details0"
+0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 80, 0, 112, 16 )
+0/region = Rect2( 512, 0, 112, 16 )
 0/tile_mode = 2
 0/autotile/icon_coordinate = Vector2( 0, 0 )
 0/autotile/tile_size = Vector2( 16, 16 )
@@ -59,11 +66,11 @@ resource_name = "spring_2nd_layer_tiles"
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-1/name = "spring_wet_dirt1"
-1/texture = ExtResource( 2 )
+1/name = "fall_wet_dirt1"
+1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 128, 144, 64, 16 )
+1/region = Rect2( 560, 144, 64, 16 )
 1/tile_mode = 2
 1/autotile/icon_coordinate = Vector2( 0, 0 )
 1/autotile/tile_size = Vector2( 16, 16 )
@@ -80,11 +87,11 @@ resource_name = "spring_2nd_layer_tiles"
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-2/name = "spring_trees2"
-2/texture = ExtResource( 2 )
+2/name = "fall_trees2"
+2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 416, 96, 48 )
+2/region = Rect2( 432, 416, 96, 48 )
 2/tile_mode = 2
 2/autotile/icon_coordinate = Vector2( 0, 0 )
 2/autotile/tile_size = Vector2( 32, 48 )
@@ -120,11 +127,11 @@ resource_name = "spring_2nd_layer_tiles"
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
-3/name = "spring_flowers3"
-3/texture = ExtResource( 2 )
+3/name = "fall_flowers3"
+3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 96, 448, 48, 16 )
+3/region = Rect2( 528, 432, 48, 16 )
 3/tile_mode = 2
 3/autotile/icon_coordinate = Vector2( 0, 0 )
 3/autotile/tile_size = Vector2( 16, 16 )
@@ -141,11 +148,11 @@ resource_name = "spring_2nd_layer_tiles"
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
-4/name = "spring_shrubs4"
-4/texture = ExtResource( 2 )
+4/name = "fall_shrubs4"
+4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 128, 416, 32, 16 )
+4/region = Rect2( 560, 400, 32, 16 )
 4/tile_mode = 2
 4/autotile/icon_coordinate = Vector2( 0, 0 )
 4/autotile/tile_size = Vector2( 16, 16 )
@@ -175,11 +182,11 @@ resource_name = "spring_2nd_layer_tiles"
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
-5/name = "spring_stumps5"
-5/texture = ExtResource( 2 )
+5/name = "fall_stumps5"
+5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 96, 400, 48, 16 )
+5/region = Rect2( 528, 384, 48, 16 )
 5/tile_mode = 2
 5/autotile/icon_coordinate = Vector2( 0, 0 )
 5/autotile/tile_size = Vector2( 16, 16 )
@@ -196,7 +203,7 @@ resource_name = "spring_2nd_layer_tiles"
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
-"autotile_coord": Vector2( 1, 0 ),
+"autotile_coord": Vector2( 3, 2 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 6 ),
@@ -208,18 +215,24 @@ resource_name = "spring_2nd_layer_tiles"
 "shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 2, 0 ),
+"autotile_coord": Vector2( 1, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
-6/name = "spring_rocks6"
-6/texture = ExtResource( 2 )
+6/name = "fall_rocks6"
+6/texture = ExtResource( 1 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 176, 448, 32, 16 )
+6/region = Rect2( 608, 432, 32, 16 )
 6/tile_mode = 2
 6/autotile/icon_coordinate = Vector2( 0, 0 )
 6/autotile/tile_size = Vector2( 16, 16 )
@@ -232,28 +245,34 @@ resource_name = "spring_2nd_layer_tiles"
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 9 )
+6/shape = SubResource( 10 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 9 ),
+"shape": SubResource( 11 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 10 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
-7/name = "spring_scarecrow7"
-7/texture = ExtResource( 2 )
+7/name = "fall_scarecrow7"
+7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 16, 752, 16, 32 )
+7/region = Rect2( 464, 512, 32, 32 )
 7/tile_mode = 2
 7/autotile/icon_coordinate = Vector2( 0, 0 )
 7/autotile/tile_size = Vector2( 16, 32 )
@@ -266,15 +285,20 @@ resource_name = "spring_2nd_layer_tiles"
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 11 )
+7/shape = SubResource( 13 )
 7/shape_one_way = false
 7/shape_one_way_margin = 1.0
 7/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 11 ),
+"shape": SubResource( 14 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
-script = ExtResource( 1 )
