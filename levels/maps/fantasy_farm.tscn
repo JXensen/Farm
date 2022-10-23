@@ -25,7 +25,58 @@ margin_top = 0.199982
 margin_right = 73.808
 margin_bottom = 20.2
 theme = ExtResource( 9 )
-text = "button"
+text = "next day"
+
+[node name="hoe" type="Button" parent="gui"]
+margin_left = 8.0
+margin_top = 373.0
+margin_right = 98.0
+margin_bottom = 402.0
+theme = ExtResource( 9 )
+text = "hoe"
+
+[node name="watering_can" type="Button" parent="gui"]
+margin_left = 3.0
+margin_top = 413.0
+margin_right = 167.0
+margin_bottom = 442.0
+theme = ExtResource( 9 )
+text = "watering can"
+
+[node name="carrot_seed" type="Button" parent="gui"]
+margin_left = 11.0
+margin_top = 459.0
+margin_right = 101.0
+margin_bottom = 488.0
+theme = ExtResource( 9 )
+text = "carrot seed"
+
+[node name="pumpkin_seed" type="Button" parent="gui"]
+margin_left = 3.0
+margin_top = 500.0
+margin_right = 93.0
+margin_bottom = 529.0
+theme = ExtResource( 9 )
+text = "tomato seed"
+
+[node name="tulip_seed" type="Button" parent="gui"]
+margin_top = 542.0
+margin_right = 162.0
+margin_bottom = 571.0
+theme = ExtResource( 9 )
+text = "tulip seed"
+
+[node name="no_tool" type="Button" parent="gui"]
+anchor_left = 0.008
+anchor_top = 0.563
+anchor_right = 0.008
+anchor_bottom = 0.563
+margin_left = 1.808
+margin_top = -37.8
+margin_right = 116.808
+margin_bottom = -16.8
+theme = ExtResource( 9 )
+text = "no tool"
 
 [node name="test_level" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -64,7 +115,7 @@ show_collision = true
 collision_layer = 2
 collision_mask = 7
 format = 1
-tile_data = PoolIntArray( 65537, 2, 1, 65556, 2, 2, 65562, 7, 0, 131082, 5, 0, 131089, 0, 4, 131101, 2, 0, 262151, 6, 1, 327684, 6, 0, 393242, 3, 0, 458781, 4, 0, 720914, 0, 6, 786460, 3, 1, 851977, 1, 0, 851988, 5, 1, 917506, 4, 1, 1048598, 0, 4, 1114139, 3, 2, 1179660, 5, 2 )
+tile_data = PoolIntArray( 65537, 2, 1, 65556, 2, 2, 65562, 7, 0, 131082, 5, 0, 131089, 0, 4, 131101, 2, 0, 262151, 6, 1, 327684, 6, 0, 393242, 3, 0, 458781, 4, 0, 720914, 0, 6, 786460, 3, 1, 851988, 5, 1, 917506, 4, 1, 1048598, 0, 4, 1114139, 3, 2, 1179660, 5, 2 )
 script = ExtResource( 6 )
 
 [editable path="player"]

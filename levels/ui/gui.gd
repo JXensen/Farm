@@ -3,15 +3,21 @@ extends CanvasLayer
 onready var floor_tiles = self.get_parent().find_node(current_level)
 onready var temp_button: Button = $Button
 # TEMP
-onready var player_tile_focus = get_parent().find_node("player").find_node("focus_area").find_node("tile_focus")
+onready var hoe_button: Button = $hoe
+onready var water_button: Button = $watering_can
+onready var carrot_seed: Button = $carrot_seed
+onready var pumpkin_seed: Button = $pumpkin_seed
+onready var blue_tulip_seed: Button = $tulip_seed
+onready var no_tool_button: Button = $no_tool
 
 enum {OFF, LOOT, TOOL, WEAPON, SPELL, FISH, MINE}
-enum tools {NONE, HOE, WATERING_CAN, SEED, TILLER}
+enum tools {NONE, HOE, WATERING_CAN, SEED, TILLER, BASKET}
 enum weapons {NONE, SWORD, DAGGER, POLEARM, GUN, BOMB, STAFF, SPEAR, BOLA, SLING, FLAMETHROWER}
 enum spells {NONE, EARTH, AIR, FIRE, WATER}
 
 var action_state = OFF
-var current_tool = tools.HOE
+var current_tool = tools.NONE
+var current_seed = null
 var current_weapon = weapons.NONE
 var current_spell = spells.NONE
 var current_level = "test_level"
@@ -23,10 +29,16 @@ var focused_tile_instances: Array
 var temp_button_idx: int = 0
  
 func _ready() -> void:
-	var connection_errors:= [0, 0, 0]
+	var connection_errors:= [0, 0, 0, 0, 0, 0, 0, 0, 0]
 	connection_errors[0] = floor_tiles.connect("garden_tile_focused", self, "on_garden_tile_focused")
 	connection_errors[1] = floor_tiles.connect("garden_tile_unfocused", self, "on_garden_tile_unfocused")
-	connection_errors[2] = temp_button.connect("pressed", player_tile_focus, "change_size", [Vector2(32,1)])
+	connection_errors[2] = temp_button.connect("pressed", floor_tiles, "changeDay")
+	connection_errors[3] = hoe_button.connect("pressed", self, "hoe_button_pressed")
+	connection_errors[4] = water_button.connect("pressed", self, "watering_can_button_pressed")
+	connection_errors[5] = carrot_seed.connect("pressed", self, "carrot_seed_button_pressed")
+	connection_errors[6] = pumpkin_seed.connect("pressed", self, "pumpkin_seed_button_pressed")
+	connection_errors[7] = blue_tulip_seed.connect("pressed", self, "blue_tulip_seed_button_pressed")
+	connection_errors[8] = no_tool_button.connect("pressed", self, "no_tool_button_pressed")
 	ErrorHandler.connection_errors("gui._ready", connection_errors)
 
 func _input(event: InputEvent) -> void:
@@ -35,6 +47,10 @@ func _input(event: InputEvent) -> void:
 		match action_state:
 			TOOL:
 				match current_tool:
+					tools.NONE:
+						for tile_instance in focused_tile_instances:
+							if tile_instance.is_hand_harvestable() and tile_instance.is_harvestable():
+								tile_instance.harvest()
 					tools.HOE:
 						for tile_instance in focused_tile_instances:
 							match tile_instance.tile_state:
@@ -44,9 +60,10 @@ func _input(event: InputEvent) -> void:
 						for tile_instance in focused_tile_instances:
 							match tile_instance.tile_state:
 								tile_instance.TILLED:
+									tile_instance.seed_state["seed_type"] = current_seed
 									tile_instance.tile_state = tile_instance.SEEDED
-								# TODO add seeded sprite to soil, set seed state
 								tile_instance.WET:
+									tile_instance.seed_state["seed_type"] = current_seed
 									tile_instance.tile_state = tile_instance.WET_SEEDED
 					tools.WATERING_CAN:
 						for tile_instance in focused_tile_instances:
@@ -55,7 +72,6 @@ func _input(event: InputEvent) -> void:
 									tile_instance.tile_state = tile_instance.WET
 								tile_instance.SEEDED:
 									tile_instance.tile_state = tile_instance.WET_SEEDED
-								# TODO add wet seeded sprite to soil
 			OFF:
 				pass
 		
@@ -74,3 +90,23 @@ func get_garden_tile_state():
 func set_garden_tile_state():
 	pass
 
+func hoe_button_pressed():
+	current_tool = tools.HOE
+
+func watering_can_button_pressed():
+	current_tool = tools.WATERING_CAN
+
+func carrot_seed_button_pressed():
+	current_tool = tools.SEED
+	current_seed = MS.carrot
+
+func pumpkin_seed_button_pressed():
+	current_tool = tools.SEED
+	current_seed = MS.tomato
+	
+func blue_tulip_seed_button_pressed():
+	current_tool = tools.SEED
+	current_seed = MS.blue_tulip
+
+func no_tool_button_pressed():
+	current_tool = tools.NONE

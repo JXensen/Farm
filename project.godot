@@ -23,11 +23,29 @@ _global_script_classes=[ {
 "class": "inventory",
 "language": "GDScript",
 "path": "res://systems/save_and_load/inventory.gd"
+}, {
+"base": "Resource",
+"class": "item",
+"language": "GDScript",
+"path": "res://items/item_stats/item_stats.gd"
+}, {
+"base": "Sprite",
+"class": "plant_seed",
+"language": "GDScript",
+"path": "res://items/seed.gd"
+}, {
+"base": "Resource",
+"class": "seed_stats",
+"language": "GDScript",
+"path": "res://items/item_stats/seed_stats.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "character_data": "",
-"inventory": ""
+"inventory": "",
+"item": "",
+"plant_seed": "",
+"seed_stats": ""
 }
 
 [application]
@@ -39,6 +57,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ErrorHandler="*res://systems/error_handler.gd"
+MS="*res://tools/magic_strings.gd"
 
 [display]
 

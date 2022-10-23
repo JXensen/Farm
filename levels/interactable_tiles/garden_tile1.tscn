@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/interactable_tiles/garden_tile1.gd" type="Script" id=1]
 [ext_resource path="res://assets/tiles/spring_dirt_wet.png" type="Texture" id=2]
 [ext_resource path="res://assets/tiles/tiles.png" type="Texture" id=3]
+[ext_resource path="res://items/seed.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -34,3 +35,9 @@ texture = ExtResource( 2 )
 normal_map = SubResource( 2 )
 region_enabled = true
 region_rect = Rect2( 128, 0, 16, 16 )
+
+[node name="Seed" type="Sprite" parent="."]
+position = Vector2( 8, 5 )
+region_enabled = true
+region_rect = Rect2( 112, 0, 16, 16 )
+script = ExtResource( 4 )
