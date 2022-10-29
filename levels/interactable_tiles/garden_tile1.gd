@@ -3,6 +3,7 @@ extends Area2D
 onready var tilled_dirt = $TilledDirt
 onready var wet_dirt = $WetDirt
 onready var Seed = $Seed
+onready var highlight = $Highlight
 
 enum {NATURAL, TILLED, SEEDED, WET, WET_SEEDED}
 
@@ -84,3 +85,12 @@ func is_harvestable() -> bool:
 
 func is_hand_harvestable() -> bool:
 	return Seed.hand_harvestable
+
+func is_tool_harvestable() -> bool:
+	return Seed.tool_harvestable
+
+func show_highlight() -> void:
+	highlight.show()
+
+func hide_highlight() -> void:
+	highlight.hide()

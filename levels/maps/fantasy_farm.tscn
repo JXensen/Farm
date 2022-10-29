@@ -78,6 +78,18 @@ margin_bottom = -16.8
 theme = ExtResource( 9 )
 text = "no tool"
 
+[node name="basket" type="Button" parent="gui"]
+anchor_left = 0.008
+anchor_top = 0.563
+anchor_right = 0.008
+anchor_bottom = 0.563
+margin_left = -2.192
+margin_top = -76.8
+margin_right = 112.808
+margin_bottom = -55.8
+theme = ExtResource( 9 )
+text = "basket"
+
 [node name="test_level" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 tile_set = ExtResource( 4 )
