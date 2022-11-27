@@ -1,8 +1,12 @@
 extends CanvasLayer
 
 onready var floor_tiles = self.get_parent().find_node(current_level)
-onready var temp_button: Button = $Button
+onready var cliff_tiles = self.get_parent().find_node(current_level + "_cliffs")
+onready var decor_tiles = self.get_parent().find_node(current_level + "_decor")
+
+onready var clock = $clock
 # TEMP
+onready var temp_button: Button = $Button
 onready var hoe_button: Button = $hoe
 onready var water_button: Button = $watering_can
 onready var carrot_seed: Button = $carrot_seed
@@ -33,7 +37,7 @@ func _ready() -> void:
 	var connection_errors:= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	connection_errors[0] = floor_tiles.connect("garden_tile_focused", self, "on_garden_tile_focused")
 	connection_errors[1] = floor_tiles.connect("garden_tile_unfocused", self, "on_garden_tile_unfocused")
-	connection_errors[2] = temp_button.connect("pressed", floor_tiles, "changeDay")
+	connection_errors[2] = temp_button.connect("pressed", clock, "next_day")
 	connection_errors[3] = hoe_button.connect("pressed", self, "hoe_button_pressed")
 	connection_errors[4] = water_button.connect("pressed", self, "watering_can_button_pressed")
 	connection_errors[5] = carrot_seed.connect("pressed", self, "carrot_seed_button_pressed")
@@ -92,11 +96,6 @@ func on_garden_tile_unfocused(tile_instance_import):
 	if focused_tiles.empty():
 		action_state = OFF
 	tile_instance_import.hide_highlight()
-
-func get_garden_tile_state():
-	pass
-func set_garden_tile_state():
-	pass
 
 func hoe_button_pressed():
 	current_tool = tools.HOE

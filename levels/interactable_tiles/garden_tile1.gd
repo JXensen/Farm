@@ -73,6 +73,7 @@ func add_seed() -> void:
 func remove_seed() -> void:
 	Seed.texture = null
 	seed_state[MS.new] = true
+	seed_state[MS.seed_type] = MS.none
 	set_tile_state(NATURAL)
 	
 func harvest() -> void:
