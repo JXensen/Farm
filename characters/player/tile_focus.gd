@@ -24,6 +24,11 @@ func change_direction(value) -> void:
 func change_size(value: Vector2) -> void:
 	size = value
 	change_direction(direction)
+	if value == Vector2(0,0):
+		self.disabled = true
+	else:
+		self.disabled = false
+
 	
 func change_extents(value: Vector2) -> void:
 	rectangle.extents = value

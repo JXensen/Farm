@@ -25,6 +25,7 @@ const starting_sprite: String = "starting_sprite"
 # Weird
 const new: String = "new"
 const none: String = "NONE"
+const player: String = "player"
 #-----------------------------------------------------------
 # Groups
 const garden_tiles: String = "garden_tiles"
@@ -35,6 +36,7 @@ const next_day: String = "next_day"
 const next_season: String = "next_season"
 const pass_time: String = "pass_time"
 const change_tile_set: String = "changeTileSet"
+const initialize_item_slot: String = "initialize_item_slot"
 #-----------------------------------------------------------
 # Signals
 const timeout: String = "timeout"
@@ -44,7 +46,18 @@ const season_changed: String = "season_changed"
 # Lists
 const day_strings = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth", "twenty-first", "twenty-second", "twenty-third", "twenty-fourth", "twenty-fifth", "twenty-sixth", "twenty-seventh", "twenty-eighth"]
 #-----------------------------------------------------------
+# Item Types
+const Seed: String = "seed"
+const Tool: String = "tool"
+const weapon: String = "weapon"
+const equipment: String = "equipment"
+const machine: String = "machine"
+const decor: String = "decor"
 #-----------------------------------------------------------
+# Tool Types
+const hoe: String = "hoe"
+const basket: String = "basket"
+const watering_can: String = "watering can"
 #-----------------------------------------------------------
 #-----------------------------------------------------------
 #-----------------------------------------------------------

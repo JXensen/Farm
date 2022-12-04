@@ -12,3 +12,4 @@ export var dryness_threshold: int
 export var dryness_regression: int
 export var resprouting: bool
 export var resprout_stage: int
+export var item_stats: Resource

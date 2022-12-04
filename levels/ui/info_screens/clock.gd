@@ -7,9 +7,10 @@ var date_time: DateTime = DateTime.new()
 
 
 func _ready():
-	var connection_errors = [0, 0]
+	var connection_errors = [0, 0, 0]
 	connection_errors[0] = timer.connect(MS.timeout, self, MS.pass_time)
 	connection_errors[1] = date_time.connect(MS.season_changed, self, MS.next_season)
+	connection_errors[2] = date_time.connect(MS.next_day_from_time_passage, self, "next_day")
 	set_time_label(date_time.now())
 	next_season()
 	ErrorHandler.connection_errors("clock._ready", connection_errors)

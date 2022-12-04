@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://items/item_stats/tool_stats.gd" type="Script" id=1]
+[ext_resource path="res://items/item_stats/tool_stats/watering_can_item.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+tool_type = 2
+item_stats = ExtResource( 2 )

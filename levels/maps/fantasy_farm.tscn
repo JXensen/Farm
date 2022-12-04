@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://levels/tilesets/summer_cliffs.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://levels/ui/gui.gd" type="Script" id=8]
 [ext_resource path="res://assets/ui/farm.theme" type="Theme" id=9]
 [ext_resource path="res://levels/ui/info_screens/clock.gd" type="Script" id=10]
+[ext_resource path="res://assets/ui/items.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/UI.png" type="Texture" id=12]
+[ext_resource path="res://levels/ui/info_screens/toolbar.gd" type="Script" id=13]
+[ext_resource path="res://items/item_slot.gd" type="Script" id=14]
 
 [node name="fantasy_farm" type="Node2D"]
 
@@ -27,69 +31,6 @@ margin_right = 73.808
 margin_bottom = 20.2
 theme = ExtResource( 9 )
 text = "next day"
-
-[node name="hoe" type="Button" parent="gui"]
-margin_left = 8.0
-margin_top = 373.0
-margin_right = 98.0
-margin_bottom = 402.0
-theme = ExtResource( 9 )
-text = "hoe"
-
-[node name="watering_can" type="Button" parent="gui"]
-margin_left = 3.0
-margin_top = 413.0
-margin_right = 167.0
-margin_bottom = 442.0
-theme = ExtResource( 9 )
-text = "watering can"
-
-[node name="carrot_seed" type="Button" parent="gui"]
-margin_left = 11.0
-margin_top = 459.0
-margin_right = 101.0
-margin_bottom = 488.0
-theme = ExtResource( 9 )
-text = "carrot seed"
-
-[node name="pumpkin_seed" type="Button" parent="gui"]
-margin_left = 3.0
-margin_top = 500.0
-margin_right = 93.0
-margin_bottom = 529.0
-theme = ExtResource( 9 )
-text = "tomato seed"
-
-[node name="tulip_seed" type="Button" parent="gui"]
-margin_top = 542.0
-margin_right = 162.0
-margin_bottom = 571.0
-theme = ExtResource( 9 )
-text = "tulip seed"
-
-[node name="no_tool" type="Button" parent="gui"]
-anchor_left = 0.008
-anchor_top = 0.563
-anchor_right = 0.008
-anchor_bottom = 0.563
-margin_left = 1.808
-margin_top = -37.8
-margin_right = 116.808
-margin_bottom = -16.8
-theme = ExtResource( 9 )
-text = "no tool"
-
-[node name="basket" type="Button" parent="gui"]
-anchor_left = 0.008
-anchor_top = 0.563
-anchor_right = 0.008
-anchor_bottom = 0.563
-margin_left = -2.192
-margin_top = -76.8
-margin_right = 112.808
-margin_bottom = -55.8
-theme = ExtResource( 9 )
-text = "basket"
 
 [node name="clock" type="CanvasLayer" parent="gui"]
 script = ExtResource( 10 )
@@ -111,6 +52,109 @@ autostart = true
 __meta__ = {
 "_editor_description_": "main clock timer, ticks away the days"
 }
+
+[node name="toolbar" type="CanvasLayer" parent="gui"]
+offset = Vector2( 161, 0 )
+transform = Transform2D( 1, 0, 0, 1, 161, 0 )
+script = ExtResource( 13 )
+
+[node name="background" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 517, 547 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 97, 112, 206, 31 )
+
+[node name="selection_highlight" type="ColorRect" parent="gui/toolbar"]
+anchor_left = 0.316
+anchor_top = 0.878
+anchor_right = 0.316
+anchor_bottom = 0.878
+margin_left = 0.415985
+margin_top = 0.200012
+margin_right = 34.416
+margin_bottom = 40.2
+color = Color( 0.968627, 0.960784, 0.545098, 1 )
+
+[node name="item0" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 341, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+
+[node name="item1" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 385, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+slot_number = 1
+
+[node name="item2" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 429, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+slot_number = 2
+
+[node name="item3" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 473, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+slot_number = 3
+
+[node name="item4" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 517, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+slot_number = 4
+
+[node name="item5" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 561, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+slot_number = 5
+
+[node name="item6" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 605, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+slot_number = 6
+
+[node name="item7" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 649, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+slot_number = 7
+
+[node name="item8" type="Sprite" parent="gui/toolbar"]
+position = Vector2( 693, 550 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 14 )
+slot_number = 8
 
 [node name="test_level" type="TileMap" parent="." groups=["tile_sets"]]
 scale = Vector2( 2, 2 )

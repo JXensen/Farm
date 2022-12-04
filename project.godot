@@ -39,10 +39,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://items/seed.gd"
 }, {
+"base": "Sprite",
+"class": "player_tool",
+"language": "GDScript",
+"path": "res://items/tool.gd"
+}, {
 "base": "Resource",
 "class": "seed_stats",
 "language": "GDScript",
 "path": "res://items/item_stats/seed_stats.gd"
+}, {
+"base": "Resource",
+"class": "tool_stats",
+"language": "GDScript",
+"path": "res://items/item_stats/tool_stats.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -51,7 +61,9 @@ _global_script_class_icons={
 "inventory": "",
 "item": "",
 "plant_seed": "",
-"seed_stats": ""
+"player_tool": "",
+"seed_stats": "",
+"tool_stats": ""
 }
 
 [application]
@@ -64,6 +76,7 @@ config/icon="res://icon.png"
 
 ErrorHandler="*res://systems/error_handler.gd"
 MS="*res://tools/magic_strings.gd"
+State="*res://systems/save_and_load/game_state.gd"
 
 [display]
 
@@ -124,6 +137,18 @@ ui_down={
 action={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
+scroll_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777232,"unicode":0,"echo":false,"script":null)
+ ]
+}
+scroll_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777234,"unicode":0,"echo":false,"script":null)
  ]
 }
 

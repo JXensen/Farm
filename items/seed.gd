@@ -32,6 +32,7 @@ var harvestable: bool = false
 var dead: bool = false
 
 var seed_stats: seed_stats setget set_seed_stats
+var seed_item_stats: item setget set_seed_item_stats, get_seed_item_stats
 
 func set_growing_time(new_time: int) -> void:
 	print("growing time: " + str(new_time))
@@ -142,3 +143,10 @@ func set_seed_stats(new_stats) -> void:
 	dryness_regression = new_stats.dryness_regression
 	resprouting = new_stats.resprouting
 	resprout_stage = new_stats.resprout_stage
+
+func set_seed_item_stats(new_stats) -> void:
+	seed_item_stats = new_stats
+	# something like "if new_stats.item_tier > 1: set_seed_stats(better_stats)
+
+func get_seed_item_stats() -> item:
+	return seed_item_stats

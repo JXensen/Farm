@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://items/item_stats/seed_stats.gd" type="Script" id=1]
+[ext_resource path="res://items/item_stats/seed_stats/carrot_seed_item.tres" type="Resource" id=2]
 
 [resource]
 script = ExtResource( 1 )
@@ -15,3 +16,4 @@ dryness_threshold = 3
 dryness_regression = 5
 resprouting = false
 resprout_stage = 0
+item_stats = ExtResource( 2 )

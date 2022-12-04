@@ -77,3 +77,4 @@ func set_stats(new_stats: character_data) -> void:
 
 func set_inventory(new_inventory: inventory) -> void:
 	player_inventory = new_inventory 
+

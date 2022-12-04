@@ -1,7 +1,10 @@
 extends Object
 class_name DateTime
 
-signal season_changed()
+# warning-ignore:unused_signal
+signal season_changed() # unused signal error from using magic string
+# warning-ignore:unused_signal
+signal next_day_from_time_passage() # unused signal error from using magic string
 
 enum seasons {Spring, Summer, Fall, Winter}
 var season_strings: Dictionary = {seasons.Spring: "Spring", seasons.Summer: "Summer", seasons.Fall: "Fall", seasons.Winter: "Winter"}
@@ -45,7 +48,7 @@ func add_day() -> String:
 
 func pass_time() -> String:
 	if current_time == times.Night:
-		return add_day()
+		emit_signal(MS.next_day_from_time_passage)
 	else:
 		current_time = (current_time + 1) % len(times)
-		return now()
+	return now()
